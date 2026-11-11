@@ -1,0 +1,66 @@
+
+import { ethers } from "ethers";
+
+export const CONTRACT_ADDRESS =
+  import.meta.env.VITE_CONTRACT_ADDRESS;
+
+export const ABI = [
+  "function owner() view returns (address)",
+  "function authorizedUsers(address) view returns (bool)",
+
+  "function authorizeUser(address user)",
+  "function revokeUser(address user)",
+
+  "function registerHerb(string,string,string,string,string,uint256,int256,int256,string) returns (uint256)",
+
+  "function addStage(uint256,string,string,string,string,int256,int256,string)",
+
+  "function getHerb(uint256) view returns (tuple(uint256 id,string herbName,string scientificName,string collectorName,string collectionLocation,string collectionDate,string metadataURI,int256 latitude,int256 longitude,uint256 quantity,address registeredBy,bool exists))",
+
+  "function getHistory(uint256) view returns (tuple(string stageName,string description,string location,string date,string metadataURI,int256 latitude,int256 longitude,address updatedBy,uint256 timestamp)[])",
+
+  "function getHistoryCount(uint256) view returns (uint256)",
+
+  "event HerbRegistered(uint256 indexed herbId,string herbName,address indexed collector)",
+  "event StageUpdated(uint256 indexed herbId,string stageName,address indexed updatedBy)"
+];
+
+export async function connectWallet() {
+  if (!window.ethereum) {
+    throw new Error("Please install MetaMask");
+  }
+
+  const provider = new ethers.BrowserProvider(window.ethereum);
+
+  await provider.send("eth_requestAccounts", []);
+
+  const signer = await provider.getSigner();
+
+  const contract = new ethers.Contract(
+    CONTRACT_ADDRESS,
+    ABI,
+    signer
+  );
+
+  return {
+    provider,
+    signer,
+    contract,
+    address: await signer.getAddress()
+  };
+}
+
+export async function getReadContract() {
+  if (!window.ethereum) {
+    throw new Error("Please install MetaMask");
+  }
+
+  const provider = new ethers.BrowserProvider(window.ethereum);
+
+  return new ethers.Contract(
+    CONTRACT_ADDRESS,
+    ABI,
+    provider
+  );
+}
+Create frontend/src/blockchain.js.
