@@ -1,0 +1,328 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f7f1;
+  color: #243328;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  background: #ffffff;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px #00000010;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 35px;
+}
+
+.brand h2 {
+  color: #236b3b;
+}
+
+.brand p {
+  color: #777;
+  font-size: 12px;
+}
+
+.connect {
+  background: #236b3b;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hero {
+  background: linear-gradient(120deg, #174b2c, #39844c);
+  color: white;
+  text-align: center;
+  padding: 65px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.hero-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.hero-tags span {
+  background: #ffffff20;
+  padding: 10px 16px;
+  border-radius: 20px;
+}
+
+.navigation {
+  background: white;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+}
+
+.navigation button {
+  padding: 12px 20px;
+  border: none;
+  background: #edf4ed;
+  color: #236b3b;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.navigation button.active {
+  background: #236b3b;
+  color: white;
+}
+
+.content {
+  max-width: 900px;
+  margin: 35px auto;
+  padding: 0 20px;
+}
+
+.panel {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px #0000000d;
+}
+
+.panel h2 {
+  color: #236b3b;
+  margin-bottom: 25px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #d5dfd5;
+  border-radius: 7px;
+  outline: none;
+  font-size: 14px;
+  background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #39844c;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.location-btn {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin: 5px 0 15px;
+  border: 1px solid #39844c;
+  background: #eff7ef;
+  color: #236b3b;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.submit {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 7px;
+  background: #236b3b;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit:hover,
+.connect:hover {
+  background: #174b2c;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 14px;
+  background: #e4f3e5;
+  border-radius: 7px;
+  color: #236b3b;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form input {
+  flex: 1;
+}
+
+.search-form button {
+  width: 120px;
+  height: 47px;
+}
+
+.result {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f7faf6;
+  border-radius: 10px;
+}
+
+.result h2 {
+  margin-bottom: 15px;
+}
+
+.result p {
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+.result a {
+  display: inline-block;
+  margin: 12px 0;
+  color: #236b3b;
+}
+
+.timeline {
+  margin-top: 20px;
+  border-left: 3px solid #39844c;
+  padding-left: 22px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e9e0;
+  overflow-wrap: anywhere;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  background: #39844c;
+  border-radius: 50%;
+}
+
+.timeline-item h4 {
+  color: #236b3b;
+  margin-bottom: 10px;
+}
+
+.qr {
+  margin-top: 30px;
+  padding: 25px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+}
+
+.qr svg {
+  margin: 15px auto;
+  display: block;
+}
+
+footer {
+  background: #174b2c;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 15px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+}
